@@ -1,0 +1,10 @@
+from Compiler.library import print_ln, start_timer, stop_timer
+from poseidon2 import Poseidon2
+
+ell = int(program.args[1]) if len(program.args) > 1 else 1
+
+poseidon2 = Poseidon2.koalabear_compression()
+seed = sint.Array(poseidon2.t)
+start_timer(1)
+result = poseidon2.hash_chain(seed, ell)
+stop_timer(1)

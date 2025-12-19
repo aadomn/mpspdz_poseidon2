@@ -1,0 +1,27 @@
+from Compiler.library import print_ln, start_timer, stop_timer
+from poseidon2 import Poseidon2
+import random
+
+# LeanSig parameters
+chunks 	= int(program.args[1])
+w 		= int(program.args[2])
+tsw 	= int(program.args[3])
+
+poseidon2 = Poseidon2.koalabear_compression()
+seed = sint.Array(poseidon2.t)
+
+# Generate a random encoded message which meets target sum Winternitz (tsw) value
+enc_msg = [0] * chunks
+for _ in range (tsw):
+    rnd = random.randrange(0,len(enc_msg))
+    while(enc_msg[rnd] == w-1):
+        rnd = random.randrange(0,len(enc_msg))
+    enc_msg[rnd] += 1
+
+# Benchmark starts for threshold LeanSig (Table 3 in paper)
+start_timer(1)
+sig = sint.Array(chunks * poseidon2.t)
+@for_range_parallel(chunks, chunks)
+def _(i):
+    sig.assign(poseidon2.hash_chain(seed, enc_msg[i]), i)
+stop_timer(1)

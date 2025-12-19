@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  mpc-poseidon2:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        # Specify MP-SPDZ version here
+        MPSPDZ_VERSION: v0.4.1
+    image: mpc-poseidon2:latest
+    container_name: mpc-poseidon2
+    volumes:
+      # Mount programs directory
+      - ./programs:/root/MP-SPDZ/Programs/Source:ro
+      # Mount scripts directory
+      - ./scripts:/root/scripts:ro
+      # Mount results directory for output
+      - ./results:/root/results
+    working_dir: /root/MP-SPDZ
+    stdin_open: true
+    tty: true
+    cap_add:
+      - NET_ADMIN

@@ -1,0 +1,17 @@
+from Compiler.library import print_ln, start_timer, stop_timer
+from poseidon2 import Poseidon2
+
+# LeanSig parameters
+chunks 	= int(program.args[1])
+w 		= int(program.args[2])
+nsig 	= int(program.args[3])
+
+poseidon2 = Poseidon2.koalabear_compression()
+secret_keys = sint.Matrix(chunks, poseidon2.t)
+
+# Benchmark starts for precomputed non-online-interactive threshold LeanSig (Table 4 in paper)
+start_timer(1)
+@for_range_parallel(nsig, nsig)
+def _(i):
+    ots = poseidon2.ots(secret_keys, w-1, chunks)
+stop_timer(1)
