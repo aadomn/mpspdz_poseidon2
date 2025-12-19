@@ -1,6 +1,6 @@
-# Benchmark of Poseidon2 Chains over MPC with the MP-SPDZ framework
+# Benchmark of Poseidon2 Chains over MPC using the MP-SPDZ framework
 
-The repository contains software artifacts to reproduce the benchmark results reported in the paper "Towards Practical Multi-Party Hash Chains using Arithmetization-Oriented Primitives - With Applications to Threshold Hash-Based Signatures" published in [IACR CiC 2025/4](https://cic.iacr.org/i/2/4).
+The repository contains software artifacts to reproduce benchmark results reported in the paper "Towards Practical Multi-Party Hash Chains using Arithmetization-Oriented Primitives - With Applications to Threshold Hash-Based Signatures" published in [IACR CiC 2025/4](https://cic.iacr.org/i/2/4).
 
 ## Instructions
 
