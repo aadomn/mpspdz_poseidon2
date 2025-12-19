@@ -18,3 +18,4 @@ docker-compose run mpc-poseidon2 /root/scripts/run_benchmark_table{x}.sh
 
 where `{x}` is expected to be `2`, `3` or `4` depending on the benchmark table you would like to reproduce.
 
+Benchmark logs (which consists of 1 file per primitive per protocol per network setting) will appear in `/root/results` and the `parse_log.py` script can then be used to format the results in tables as in the paper.
